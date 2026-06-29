@@ -4,7 +4,7 @@
 ![Model](https://img.shields.io/badge/Model-Gemma--2B-orange)
 ![Fine-Tuning](https://img.shields.io/badge/Fine--Tuning-LoRA%20%7C%20QLoRA-success)
 
-## 📌 Overview
+## Overview
 
 As Large Language Models (LLMs) become increasingly integrated into public-facing applications, ensuring they generate safe, non-toxic, and helpful content is a critical priority. This project implements a proactive, **dual-layer safety alignment system** utilizing the **Gemma 2B** architecture to act as a robust firewall against toxic inputs, jailbreak attempts, and model hallucinations.
 

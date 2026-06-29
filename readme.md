@@ -1,4 +1,4 @@
-# Safety-Aware NLP Pipeline Using Gemma 2B 🛡️
+# Safety-Aware NLP Pipeline Using Gemma 2B
 
 ![Safety Architecture](https://img.shields.io/badge/Architecture-Dual--LLM%20Safety-blue)
 ![Model](https://img.shields.io/badge/Model-Gemma--2B-orange)
@@ -16,7 +16,7 @@ As Large Language Models (LLMs) become increasingly integrated into public-facin
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 This pipeline leverages the Gemma 2B model (featuring GeGLU activations and Multi-Query Attention for high efficiency) in a two-stage filtering and generation pipeline:
 
@@ -26,7 +26,7 @@ This pipeline leverages the Gemma 2B model (featuring GeGLU activations and Mult
 
 ---
 
-## 🧠 Model 1: Main LLM (Generative Safety)
+## Model 1: Main LLM (Generative Safety)
 
 Responsible for conversational generation, this model is fine-tuned via Supervised Fine-Tuning (SFT) to handle nuanced instructions and consistently refuse malicious prompts.
 
@@ -38,7 +38,7 @@ Responsible for conversational generation, this model is fine-tuned via Supervis
 
 ---
 
-## 🛑 Model 2: Guard LLM (Toxicity Scorer)
+## Model 2: Guard LLM (Toxicity Scorer)
 
 Operates not as a text generator, but as a **sequence regression scorer**. It evaluates input/output text and predicts a continuous toxicity score. If the score exceeds a designated threshold, the system triggers a hardcoded refusal.
 
@@ -50,14 +50,14 @@ Operates not as a text generator, but as a **sequence regression scorer**. It ev
 
 ---
 
-## 🚀 Key Features & Heuristics
+## Key Features & Heuristics
 
 - **Programmatic Cut-Offs:** Implemented string-splitting heuristics (`generated_text.split("User:")[0]`) to actively intercept and remove multi-turn dialogue hallucinations caused by autocomplete behaviors.
 - **Memory-Safe Tokenization:** Dynamic truncation (256 tokens for Main LLM, 512 for Guard LLM) and proper right-side EOS padding to prevent OOM spikes during training and inference.
 
 ---
 
-## 🔮 Future Scope
+## Future Scope
 
 - **Native Chat Templates:** Transitioning from raw text formatting to Gemma's native `<start_of_turn>` and `<end_of_turn>` special tokens for stricter generation stopping.
 - **Dynamic Thresholding:** Adjusting the Guard LLM's toxicity threshold dynamically based on the application context (e.g., stricter limits for child-facing apps).

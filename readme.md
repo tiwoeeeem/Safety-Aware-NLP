@@ -62,3 +62,10 @@ Operates not as a text generator, but as a **sequence regression scorer**. It ev
 - **Native Chat Templates:** Transitioning from raw text formatting to Gemma's native `<start_of_turn>` and `<end_of_turn>` special tokens for stricter generation stopping.
 - **Dynamic Thresholding:** Adjusting the Guard LLM's toxicity threshold dynamically based on the application context (e.g., stricter limits for child-facing apps).
 - **Knowledge Distillation:** Using larger teacher models to distill advanced safety behaviors into the 2B framework to push perplexity down further.
+- **Increase finetuning data :** If given more time and compute I would have wanted to fine tune it one more data.
+
+## Things That I Plan to Try :
+
+- Use the harmful responses and update the weights to move away from the recommended change, the reasoning behind this is that we want the model to move away from this type of behaviour.
+
+

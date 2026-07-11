@@ -79,8 +79,17 @@ flowchart LR
 |:---|:---|:---:|:---|
 | **Main LLM** | Test Loss | `1.8205` | Cross-entropy loss on held-out test set |
 | **Main LLM** | Test Perplexity | `6.1751` | Strong syntax retention and generative coherence |
-| **Guard LLM** | Test MSE | `0.1097` | Mean Squared Error on toxicity regression |
-| **Guard LLM** | Test MAE | `0.2493` | Accurate alignment with ground-truth toxicity scores |
+| **Guard LLM** | Test MSE | `0.1541` | Mean Squared Error on toxicity regression |
+| **Guard LLM** | Test MAE | `0.0541` | Accurate alignment with ground-truth toxicity scores |
+
+### MAIN LLM Toxicity
+
+| Model | Metric | Value 
+|:---|:---|:---:|
+| **Main LLM - base ** | Avg Toxicity  | `0.1349` |
+| **Main LLM - fine tuned ** | Avg Toxicity | `0.0787` |
+
+Reduced toxicity by  roughly 42 percentage.
 
 ### Adversarial Red-Team Evaluation
 

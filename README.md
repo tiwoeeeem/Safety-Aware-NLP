@@ -86,8 +86,8 @@ flowchart LR
 
 | Model | Metric | Value 
 |:---|:---|:---:|
-| **Main LLM - base ** | Avg Toxicity  | `0.1349` |
-| **Main LLM - fine tuned ** | Avg Toxicity | `0.0787` |
+| **Main LLM - base** | Avg Toxicity  | `0.1349` |
+| **Main LLM - fine tuned** | Avg Toxicity | `0.0787` |
 
 Reduced toxicity by  roughly 42 percentage.
 
